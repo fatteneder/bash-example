@@ -2,11 +2,11 @@ steps:
   - label: ":hammer: Example Script"
     plugins:
       - library-example#v1.0.0: ~
-      - https://github.com/fatteneder/diff-filter-buildkite-plugin.git#2bb2cf3d6f1644916155c4c9e3bb5b087815ebd9:
+      - https://github.com/fatteneder/diff-filter-buildkite-plugin.git#7ae5a17e28961e2db540fb3d49f8cac614fce724:
           name: "docs"
           match:
             - "testdir/docs/*"
-      - https://github.com/fatteneder/diff-filter-buildkite-plugin.git#2bb2cf3d6f1644916155c4c9e3bb5b087815ebd9:
+      - https://github.com/fatteneder/diff-filter-buildkite-plugin.git#7ae5a17e28961e2db540fb3d49f8cac614fce724:
           name: "build"
           match:
             - "testdir/*"
