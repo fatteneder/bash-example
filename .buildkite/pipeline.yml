@@ -12,12 +12,12 @@ steps:
           ignore:
             - "testdir/**/*.md"
     commands: |
+      echo $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS}
+      echo $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_BUILD}
       if [[ $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS} == 1 ]]; then
-        echo "Running docs step"
         script.sh
       fi
       if [[ $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_BUILD} == 1 ]]; then
-        echo "Running build step"
         script.sh
       fi
     artifact_paths: "artifacts/*"
