@@ -1,16 +1,16 @@
 steps:
   - label: ":hammer: Example Script"
     plugins:
-      # - fatteneder/diff-filter#v1.0:
-      #   name: docs
-      #   match:
-      #     - "testdir/docs/*"
-      # - fatteneder/diff-filter#v1.0:
-      #   name: build
-      #   match:
-      #     - "testdir/*"
-      #   ignore:
-      #     - "testdir/**/*.md"
+      - https://github.com/fatteneder/diff-filter-buildkite-plugin:
+        name: docs
+        match:
+          - "testdir/docs/*"
+      - https://github.com/fatteneder/diff-filter-buildkite-plugin:
+        name: build
+        match:
+          - "testdir/*"
+        ignore:
+          - "testdir/**/*.md"
     commands: |
       "script.sh"
       # if [[ $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS} == 1 ]]; then
