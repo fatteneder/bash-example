@@ -12,8 +12,7 @@ steps:
       #     - "testdir/*"
       #   ignore:
       #     - "testdir/**/*.md"
-    command: |
-      "script.sh"
+    command: "script.sh"
       # if [[ $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS} == 1 ]]; then
       #   "script.sh"
       # fi
