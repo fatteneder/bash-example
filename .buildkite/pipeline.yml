@@ -15,7 +15,7 @@ steps:
       echo "Hello"
       echo $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS}
       echo $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_BUILD}
-      echo "World!!"
+      echo "World!!!"
       if [[ $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS} == 1 ]]; then
         script.sh
       fi
