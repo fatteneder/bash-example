@@ -1,4 +1,21 @@
 steps:
   - label: ":hammer: Example Script"
-    command: "script.sh"
+    plugins:
+      - fatteneder/diff-filter#v1.0:
+        name: docs
+        match:
+          - "testdir/docs/*"
+      - fatteneder/diff-filter#v1.0:
+        name: build
+        match:
+          - "testdir/*"
+        ignore:
+          - "testdir/**/*.md"
+    command: |
+      if [[ $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS} == 1 ]]; then
+        "script.sh"
+      fi
+      if [[ $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_BUILD} == 1 ]]; then
+        "script.sh"
+      fi
     artifact_paths: "artifacts/*"
