@@ -1,6 +1,7 @@
 steps:
   - label: ":hammer: Example Script"
     plugins:
+      - library-example#v1.0.0: ~
       - https://github.com/fatteneder/diff-filter-buildkite-plugin.git#fa/test-online:
           name: "docs"
           match:
@@ -13,13 +14,13 @@ steps:
             - "testdir/**/*.md"
     commands: |
       echo "Hello"
-      echo ${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS}
-      echo ${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_BUILD}
+      echo $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS}
+      echo $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_BUILD}
       echo "World!!!"
-      if [[ ${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS} == 1 ]]; then
+      if [[ $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS} == 1 ]]; then
         script.sh
       fi
-      if [[ ${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_BUILD} == 1 ]]; then
+      if [[ $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_BUILD} == 1 ]]; then
         script.sh
       fi
     artifact_paths: "artifacts/*"
