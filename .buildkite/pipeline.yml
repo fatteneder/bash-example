@@ -14,9 +14,9 @@ steps:
             - "testdir/**/*.md"
     commands: |
       if [[ $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS} == 1 ]]; then
-        script.sh
+        ./script.sh
       fi
       if [[ $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_BUILD} == 1 ]]; then
-        script.sh
+        ./script.sh
       fi
     artifact_paths: "artifacts/*"
