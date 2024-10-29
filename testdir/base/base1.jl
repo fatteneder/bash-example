@@ -24,6 +24,3 @@ println(matrix)
 
 # Calculate the determinant of the matrix
 det = det(matrix)
-
-# Print the determinant
-println("Determinant of the matrix is $det")
