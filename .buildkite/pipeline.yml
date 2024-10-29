@@ -2,21 +2,17 @@ steps:
   - label: ":hammer: Example Script"
     plugins:
       - library-example#v1.0.0: ~
-      - https://github.com/fatteneder/diff-filter-buildkite-plugin#0ddbe1fd6efbaa90dd5ae87e07eb70cd5cb422d3:
+      - https://github.com/fatteneder/diff-filter-buildkite-plugin#391033736be7d9e75bc404a9efa842deb1bffc2d:
           name: "docs"
           match:
             - "testdir/docs/*"
-      - https://github.com/fatteneder/diff-filter-buildkite-plugin#0ddbe1fd6efbaa90dd5ae87e07eb70cd5cb422d3:
+      - https://github.com/fatteneder/diff-filter-buildkite-plugin#391033736be7d9e75bc404a9efa842deb1bffc2d:
           name: "build"
           match:
             - "testdir/*"
           ignore:
             - "testdir/**/*.md"
     commands: |
-      echo "Hello"
-      echo $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS}
-      echo $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_BUILD}
-      echo "World!!!!"
       if [[ $${BUILDKITE_PLUGIN_DIFF_FILTER_TRIGGERED_DOCS} == 1 ]]; then
         script.sh
       fi
